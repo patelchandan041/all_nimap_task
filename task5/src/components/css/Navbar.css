@@ -1,0 +1,33 @@
+.navbar{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    background-color: hsl(0, 12%, 97%);
+    position: sticky;
+    top: 0;
+}
+.navbar > h3{
+    margin-left: 20px;
+}
+.nav{
+    display: flex;
+    margin-right: 40px;
+    list-style: none;
+    }
+    .link{
+        text-decoration: none;
+    }
+.nav > li{
+    text-decoration: none;
+    padding: 5px;
+    cursor: pointer;
+    margin-left: 50px;
+    list-style: none;
+    border-radius: 10px;
+    border: none;
+    }   
+
+.nav > li:hover{
+    background-color:hsl(187, 50%, 91%) ;
+} 

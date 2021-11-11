@@ -1,0 +1,15 @@
+.form-btn{
+    color: green;
+    margin-top: 40px;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: "pointer";
+}
+.form-btn:hover{
+    background-color:rgb(185, 250, 185);
+    cursor: pointer;
+}
+/* .form-btn:hover .btn-txt{
+   color: white;
+} */
