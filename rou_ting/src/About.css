@@ -1,0 +1,7 @@
+.about{
+    display: flex;
+    flex-direction: row;
+}
+.about__img{
+    height: 460px;
+}

@@ -1,0 +1,21 @@
+.home{
+    height: 100vh;
+    display: flex;
+    flex-direction: row;
+}
+.home__left{
+    width: 50%;
+    background-color: hsl(187, 50%, 91%);
+}
+.home__right{
+    background-color: white;
+}
+.home__text{
+    margin-top: 200px;
+    margin-left: 465px;
+    position: absolute;
+}
+.home__text > p3{
+    
+    color: rgb(83, 83, 255);
+}
