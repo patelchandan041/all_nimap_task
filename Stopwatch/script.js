@@ -1,74 +1,85 @@
-// Convert time to a format of hours, minutes, seconds, and milliseconds
+let seconds = 0;
+let minutes = 0;
+let hours = 0;
 
-function timeToString(time) {
-    let diffInHrs = time / 3600000;
-    let hh = Math.floor(diffInHrs);
+let displaySeconds = 0;
+let displayMinutes = 0;
+let displayHours = 0;
+
+let interval = null;
+
+let status = "stopped";
+
+function stopWatch(){
+
+    seconds++;
+
+    if(seconds / 60 === 1){
+        seconds = 0;
+        minutes++;
+
+        if(minutes / 60 === 1){
+            minutes = 0;
+            hours++;
+        }
+
+    }
+
   
-    let diffInMin = (diffInHrs - hh) * 60;
-    let mm = Math.floor(diffInMin);
-  
-    let diffInSec = (diffInMin - mm) * 60;
-    let ss = Math.floor(diffInSec);
-  
-    let diffInMs = (diffInSec - ss) * 100;
-    let ms = Math.floor(diffInMs);
-  
-    let formattedMM = mm.toString().padStart(2, "0");
-    let formattedSS = ss.toString().padStart(2, "0");
-    let formattedMS = ms.toString().padStart(2, "0");
-  
-    return `${formattedMM}:${formattedSS}:${formattedMS}`;
-  }
-  
-  // Declare variables to use in our functions below
-  
-  let startTime;
-  let elapsedTime = 0;
-  let timerInterval;
-  
-  // Create function to modify innerHTML
-  
-  function print(txt) {
-    document.getElementById("display").innerHTML = txt;
-  }
-  
-  // Create "start", "pause" and "reset" functions
-  
-  function start() {
-    startTime = Date.now() - elapsedTime;
-    timerInterval = setInterval(function printTime() {
-      elapsedTime = Date.now() - startTime;
-      print(timeToString(elapsedTime));
-    }, 10);
-    showButton("PAUSE");
-  }
-  
-  function pause() {
-    clearInterval(timerInterval);
-    showButton("PLAY");
-  }
-  
-  function reset() {
-    clearInterval(timerInterval);
-    print("00:00:00");
-    elapsedTime = 0;
-    showButton("PLAY");
-  }
-  
-  // Create function to display buttons
-  
-  function showButton(buttonKey) {
-    const buttonToShow = buttonKey === "PLAY" ? playButton : pauseButton;
-    const buttonToHide = buttonKey === "PLAY" ? pauseButton : playButton;
-    buttonToShow.style.display = "block";
-    buttonToHide.style.display = "none";
-  }
-  // Create event listeners
-  
-  let playButton = document.getElementById("playButton");
-  let pauseButton = document.getElementById("pauseButton");
-  let resetButton = document.getElementById("resetButton");
-  
-  playButton.addEventListener("click", start);
-  pauseButton.addEventListener("click", pause);
-  resetButton.addEventListener("click", reset);
+    if(seconds < 10){
+        displaySeconds = "0" + seconds.toString();
+    }
+    else{
+        displaySeconds = seconds;
+    }
+
+    if(minutes < 10){
+        displayMinutes = "0" + minutes.toString();
+    }
+    else{
+        displayMinutes = minutes;
+    }
+
+    if(hours < 10){
+        displayHours = "0" + hours.toString();
+    }
+    else{
+        displayHours = hours;
+    }
+
+    
+    document.getElementById("display").innerHTML = displayHours + ":" + displayMinutes + ":" + displaySeconds;
+
+}
+
+
+
+function startStop(){
+
+    if(status === "stopped"){
+
+        interval = window.setInterval(stopWatch, 1000);
+        document.getElementById("startStop").innerHTML = "Stop";
+        status = "started";
+
+    }
+    else{
+
+        window.clearInterval(interval);
+        document.getElementById("startStop").innerHTML = "Start";
+        status = "stopped";
+
+    }
+
+}
+
+function reset(){
+
+    window.clearInterval(interval);
+    seconds = 0;
+    minutes = 0;
+    hours = 0;
+    document.getElementById("display").innerHTML = "00:00:00";
+    document.getElementById("startStop").innerHTML = "Start";
+
+}
