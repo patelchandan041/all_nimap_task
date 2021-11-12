@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import './Form.css'
+import './Form.css';
+
 function Form() {
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -33,7 +34,6 @@ function Form() {
          else{
              setEmailErr(false)
          }
-   
     }
     const passHandler = (e) => {
       setPassword(e.target.value)
@@ -45,18 +45,18 @@ function Form() {
      }
     }
     return (
-        <div>
-            <h2 style={{ margin: "30px 590px" }}>Form Validation</h2>
+        <div className="div">
+            <h2 className="heading">Form Validation</h2>
             
             <form style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <input style={{ width: "400px", height: "25px", marginTop: "20px" }} placeholder="Name" />
-                <input style={{ width: "400px", height: "25px", marginTop: "20px" }} value={email}
+                <input autoFocus className="inputs"  placeholder="Name" />
+                <input className="inputs"  value={email}
                     onChange={emailHandler} placeholder="Email" />
-                                {emailErr && <p style={{ color: "red" }}>Your email is invalid</p>}
+                                {emailErr && <p className="error">Incorrect email type</p>}
 
-                <input style={{ width: "400px", height: "25px", marginTop: "20px" }} value={password}
+                <input className="inputs"  value={password}
                     onChange={passHandler} placeholder="Password" />
-                                {pwdError && <p style={{ color: "red" }}>Your password is invalid</p>}
+                                {pwdError && <p className="error">Your password is weak</p>}
                 <button className="form-btn" onClick={Submit}><span className="btn-txt">Submit</span></button>
             </form>
         </div>
