@@ -27,10 +27,10 @@ function Login () {
   
     return(
         <div>
-           <div style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <input onChange={(e)=> setEmail(e.target.value)} style={{ width: "400px", height: "25px", marginTop: "20px" }}  placeholder="Email" />
-                <input onChange={(e)=> setPass(e.target.value)} style={{ width: "400px", height: "25px", marginTop: "20px" }} placeholder="Password" />
-                <button className="form-btn"><span className="btn-txt" onClick={login}>Login</span></button>
+           <div style={{ display: "flex", flexDirection: "column", alignItems: "center",paddingTop:"80px" }}>
+                <input autoFocus onChange={(e)=> setEmail(e.target.value)} style={{ width: "400px",outline:"none", height: "25px", marginTop: "30px",borderRadius:"8px" }}  placeholder="Email" />
+                <input type="password" onChange={(e)=> setPass(e.target.value)} style={{ width: "400px", height: "25px",outline:"none",  marginTop: "30px",borderRadius:"8px" }} placeholder="Password" />
+                <button style={{padding:"5px 8px",borderRadius:"8px",marginTop:"50px",width:"100px"}} className="form-btn"><span className="btn-txt" onClick={login}>Login</span></button>
             </div>
             </div>
     )

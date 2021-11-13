@@ -1,4 +1,5 @@
 import React from "react";
+import './css/Dashboard.css'
 import {useHistory} from 'react-router-dom'
 
 function Dashboard () {
@@ -8,9 +9,9 @@ function Dashboard () {
         history.push('/')
     }
     return(
-        <div>
+        <div style={{display:"flex",flexDirection:"column",margin:"180px 600px"}}>
            <h1>Dashboard</h1>
-           <button onClick={logout}>Logout</button>
+           <button style={{padding:"5px 8px",borderRadius:"5px"}} onClick={logout}>Logout</button>
         </div>
     )
 }

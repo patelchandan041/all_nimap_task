@@ -23,11 +23,16 @@ function App() {
   return (
     <div className="App">
     <BrowserRouter>
-    <Navbar />
-   <Switch>
+    <Switch>
     
-       <Route exact path="/register" component={Register} />
-        <Route exact path="/" component={Login} />
+       <Route exact path="/register" >
+         <Navbar />
+         <Register />
+         </Route>
+        <Route exact path="/"  >
+          <Navbar />
+          <Login />
+          </Route>
         {user? (<Route  path="/dashboard" component={Dashboard} />) :
         ( <Redirect to="/" />)
            }  

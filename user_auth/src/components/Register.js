@@ -17,11 +17,11 @@ function Register(){
     console.log(email,password)
     return(
         <div>
-             <form style={{ display: "flex", flexDirection: "column", alignItems: "center" }}>
-                <input style={{ width: "400px", height: "25px", marginTop: "20px" }} placeholder="Name" />
-                <input value={email} onChange={(e)=> setEmail(e.target.value)} style={{ width: "400px", height: "25px", marginTop: "20px" }}  placeholder="Email" />
-                <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} style={{ width: "400px", height: "25px", marginTop: "20px" }} placeholder="Password" />
-                <button className="form-btn"><span className="btn-txt" onClick={register}>Register</span></button>
+             <form style={{ display: "flex", flexDirection: "column", alignItems: "center",paddingTop:"80px" }}>
+                <input style={{ width: "400px", height: "25px", marginTop: "20px",outline:"none",borderRadius:"8px" }} placeholder="Name" />
+                <input value={email} onChange={(e)=> setEmail(e.target.value)} style={{ width: "400px", height: "25px", marginTop: "20px",outline:"none",borderRadius:"8px" }}  placeholder="Email" />
+                <input type="password" value={password} onChange={(e)=> setPassword(e.target.value)} style={{ width: "400px", height: "25px", marginTop: "20px",outline:"none",borderRadius:"8px" }} placeholder="Password" />
+                <button style={{padding:"5px 8px",borderRadius:"8px",marginTop:"50px",width:"100px"}} className="form-btn"><span className="btn-txt" onClick={register}>Register</span></button>
             </form>
         </div>
     )
