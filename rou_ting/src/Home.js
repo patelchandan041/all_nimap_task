@@ -2,6 +2,7 @@ import React from 'react'
 import './Home.css'
 
 function Home() {
+    const [value,setValue] = React.useState("")
     return (
         <div className='home'>
              <div className="home__text">
@@ -13,8 +14,8 @@ function Home() {
         excellent software that improves the lives of those around me. 
         </p1>
             </div>
-            
-           <div className="home__left"></div>
+            <h1>{value}</h1>
+            <div className="home__left"></div>
            <div className="home__right"></div>
         </div>
     )
