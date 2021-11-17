@@ -10,6 +10,7 @@ function App() {
   const [todos,setTodos]  = useState([])
   const [put,setPut] = useState(false)
   const [update,setUpdate] = useState("")
+  const [ids,setIds] = useState("")
 
 
   const Add = async() => {
@@ -27,10 +28,24 @@ function App() {
    }
   
    const Edit = (id) => {
-     let newEditItem = todos.find((elem) => {
-       return elem.id === id
-     })
-     console.log(newEditItem)
+    //  console.log(id)
+     setIds(id)
+     
+   }
+
+   const EditTodo = () => {
+    let newEditItem = todos.find((elem) => {
+      return elem.id === ids
+    })
+    setTodos(
+      todos.map((elem)=>{
+        if(elem.id === ids){
+          return{...elem,input:input}
+        }
+        return elem;
+      })
+    )
+    console.log(newEditItem)
    }
 
   console.log(todos)
@@ -40,7 +55,8 @@ function App() {
         <div className="input">
         <Input onChange={(e)=>setInput(e.target.value)} />
         <button onClick={Add}>Add</button>
-        </div>
+        <button onClick={EditTodo}>Edit</button>
+          </div>
       <Table className="table">
         <TableHead className="tableHead">
           <TableCell>Todos</TableCell>
@@ -49,13 +65,13 @@ function App() {
         </TableHead>
         <TableBody className="tableBody">
          
-      {todos.map((val,index) => {
+      {todos.map((val) => {
 							return (
                 <TableRow >
-              <TableCell key={index}>{val.input} </TableCell>
+              <TableCell key={val.id}>{val.input} </TableCell>
               <TableCell>
                 <DeleteIcon onClick={()=>Delete(val.id)} />
-              {/* <EditIcon onClick={()=>Edit(val.id)} /> */}
+              <EditIcon onClick={()=>Edit(val.id)} />
               </TableCell>
               </TableRow>
               )

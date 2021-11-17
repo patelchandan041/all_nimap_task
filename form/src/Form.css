@@ -19,7 +19,13 @@
     padding: 10px;
     cursor: "pointer";
 }
-.form-btn:hover{
+.btn-enter{
+    color: white;
+    margin-top: 20px;
+    border: none;
+    width: 250px;
+    border-radius: 10px;
+    padding: 10px;
     background-color:rgba(255, 68, 0, 0.795);
     cursor: pointer;
 }

@@ -1,4 +1,5 @@
 import React from "react";
+import PropTypes from 'prop-types';
 
 function ComponentB ({img,title,link}){
     return(
@@ -10,4 +11,11 @@ function ComponentB ({img,title,link}){
     )
 }
 
-export default ComponentB
+ComponentB.propTypes = {
+    img: PropTypes.number,
+    title: PropTypes.number,
+    link: PropTypes.string,
+    
+}
+
+export default ComponentB;
