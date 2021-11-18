@@ -17,7 +17,10 @@ mongoose.connect(process.env.DB_CONNECTION, {
 
 require('./models/user')
 require('./models/post')
+require('./models/posts')
 
+const postRoute = require('./routes/posts');
+app.use('/postesss', postRoute);
 app.use(require('./routes/auth'));
 app.use(require('./routes/post'));
   
