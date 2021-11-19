@@ -16,15 +16,15 @@ function PostModal({addtopic,Addtoggle,id}) {
     const [title,setTitle] = useState("")
     const [description,setDescription] = useState("")
 
-    const UpdatePost = (id) => {
+    const UpdatePost = async(id) => {
         console.log("id",id)
         axios.put(`http://localhost:5000/postesss/${id}`, {title, description})
         // {title:title,description:desc}
-    
+        await Addtoggle()
         }
     return (
         <div>
-            <Modal className='modal-lg' className="modal" isOpen={true}  >
+            <Modal className='modal-lg' className="modal" isOpen={Addtoggle}  >
             <ModalHeader style={{ border: "none" }}>
           <strong>
             <span

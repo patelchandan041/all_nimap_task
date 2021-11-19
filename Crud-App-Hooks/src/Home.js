@@ -17,7 +17,6 @@ function Home() {
         fetch("http://localhost:5000/postesss")
         .then(res => res.json())
         .then(res => setData(res))
-        
         }
 
     const Delete = (id) => {
@@ -53,7 +52,7 @@ function Home() {
             <div className="container-add">
                <input value={title} onChange={(e)=> setTitle(e.target.value)} type="text" />
                 <input value={desc} onChange={(e)=> setDesc(e.target.value)} type="text" />
-                <button onClick={Add}>Add</button>
+                <button onClick={Add} className="add-btn">Add</button>
             </div>
         <div className="home">
           {data.map((ele)=>(
