@@ -9,12 +9,13 @@ import Dashboard from "./components/Dashboard";
 import Login from "./components/Login";
 import Navbar from "./components/Navbar";
 import Register from './components/Register';
+import PrivateRoute from "./PrivateRoute";
 
 function App() {
   const [user,setUser] = useState("")
  
- 
   console.log("user",user)
+
   useEffect(()=>{
     setUser(localStorage.getItem('user'))
   },[])
@@ -36,6 +37,7 @@ function App() {
         {user? (<Route  path="/dashboard" component={Dashboard} />) :
         ( <Redirect to="/" />)
            }  
+           {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
     </Switch>
     </BrowserRouter>
     </div>

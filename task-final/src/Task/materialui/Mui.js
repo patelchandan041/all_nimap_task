@@ -3,7 +3,7 @@ import { Input } from '@mui/material';
 import { TableCell,TableBody,TableHead,TableRow, Table } from '@mui/material';
 import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
-
+import './Mui.css'
 
 function Mui() {
   const [input,setInput] = useState()
@@ -50,12 +50,12 @@ function Mui() {
 
   console.log(todos)
  return (
-    <div className="App">
+    <div className="Mui">
       <div className="todo-body">
         <div className="input">
         <Input onChange={(e)=>setInput(e.target.value)} />
         <button onClick={Add}>Add</button>
-        <button onClick={EditTodo}>Edit</button>
+        <button style={{marginLeft:"40px",width:"30px"}} onClick={EditTodo}>Edit</button>
           </div>
       <Table className="table">
         <TableHead className="tableHead">

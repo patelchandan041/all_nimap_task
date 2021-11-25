@@ -18,9 +18,9 @@ function Form () {
     return(
         <div className="form">
           <input ref={ref1} type="text" placeholder="Enter your name"  />
-          <input ref={ref2} type="email"  />
-          <input ref={ref3} type="password"  />
-          <button onClick={Click}>Click</button>
+          <input ref={ref2} type="email" placeholder="Enter your email"  />
+          <input ref={ref3} type="password" placeholder="Enter ypur password"  />
+          <button onClick={Click} style={{width:"60px"}}>Click</button>
         </div>
     )
 }

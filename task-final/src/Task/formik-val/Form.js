@@ -25,9 +25,10 @@ const Form = () => {
   });
   console.log(formik.values.firstName)
   return (
-    <form style={{display:"flex",flexDirection:"column",width:"300px",margin:"50px 500px",}} onSubmit={formik.handleSubmit}>
+    <form style={{display:"flex",flexDirection:"column",width:"300px",margin:"80px 470px",backgroundColor:"grey",padding:"50px",borderRadius:"20px"}} onSubmit={formik.handleSubmit}>
       <label htmlFor="firstName">First Name</label>
       <input
+            style={{padding:"5px",borderRadius:"8px",outline:"none"}}
         id="firstName"
         name="firstName"
         type="text"
@@ -41,6 +42,7 @@ const Form = () => {
 
       <label htmlFor="lastName">Last Name</label>
       <input
+      style={{padding:"5px",borderRadius:"8px",outline:"none"}}
         id="lastName"
         name="lastName"
         type="text"
@@ -54,6 +56,7 @@ const Form = () => {
 
       <label htmlFor="email">Email Address</label>
       <input
+        style={{padding:"5px",borderRadius:"8px",outline:"none"}}
         id="email"
         name="email"
         type="email"
@@ -65,7 +68,7 @@ const Form = () => {
         <div style={{color:"red"}}>{formik.errors.email}</div>
       ) : null}
 
-      <button style={{width:"100px",margin:"20px 100px"}} type="submit">Submit</button>
+      <button style={{width:"100px",margin:"20px 100px",padding:"7px",borderRadius:"7px"}} type="submit">Submit</button>
     </form>
   );
 };

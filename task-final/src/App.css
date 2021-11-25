@@ -3,7 +3,7 @@
   padding: 0;
 }
 .navbar{
-  padding: 10px 0px;
+  padding: 20px 0px;
   display: flex;
   flex-direction: row;
   background-color: #333;
@@ -43,10 +43,10 @@ border-top-right-radius:12px;
   box-shadow: 0px 30px 18px -8px black;
   transform: scale(1.05,1.05);
 }
-.project > p{
+/* .project > p{
 
-}
-.project >a{
+} */
+.project > a {
   padding: 5px 8px;
   text-transform: uppercase;
   font-size: 13px;
@@ -57,4 +57,10 @@ border-top-right-radius:12px;
   outline: none;
   border: 1px solid black;
   cursor: pointer;
+}
+.day{
+  background-color: #FC9601;
+}
+.night{
+  background-color:#061D37;
 }

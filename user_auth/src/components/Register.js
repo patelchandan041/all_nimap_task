@@ -11,7 +11,7 @@ function Register(){
         e.preventDefault()
         localStorage.setItem("email",email)
         localStorage.setItem("pass",password)
-        await history.push('/login')
+        await history.push('/')
     }
 
     console.log(email,password)

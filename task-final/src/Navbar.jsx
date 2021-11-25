@@ -12,6 +12,7 @@ function Navbar() {
             <NavLink  className="navlink" activeClassName="active" to="/form-ref">form-ref</NavLink>
             <NavLink  className="navlink" activeClassName="active" to="/mui">Mui</NavLink>
             <NavLink  className="navlink" activeClassName="active" to="/formik">Formik</NavLink>
+            <NavLink  className="navlink" activeClassName="active" to="/Chart">Chart</NavLink>
         </div>
     )
 }

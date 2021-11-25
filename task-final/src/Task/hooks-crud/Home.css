@@ -18,12 +18,20 @@
     margin: 50px 70px;
 }
 .container-add{
+    /* margin-top: 100px; */
     display: flex;
     flex-direction: column;
     max-width: 300px;
-    margin: 10px 510px;
+    margin: 20px 510px;
 }
 .add-btn{
     width: 50px;
+    margin-top: 10px;
     margin-left: 120px;
+}
+.container-add > input {
+    padding: 5px;
+    border-radius: 5px;
+    border: 1px solid lightslategray;
+    margin-top: 10px;
 }
