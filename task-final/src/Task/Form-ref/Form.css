@@ -1,0 +1,22 @@
+
+  .form{
+      margin: 100px 500px;
+    border-radius: 10px;
+    background-color: #000;
+    /* margin:  300px; */
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    max-width: 200px;
+    padding: 100px;
+  }
+  
+  .form > input{
+    padding: 5px 8px;
+    margin-bottom:25px;
+    border-radius: 8px;
+    width: 300px;
+    border: none;
+    outline: none;
+  }
