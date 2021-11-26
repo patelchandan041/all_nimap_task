@@ -34,9 +34,10 @@ function App() {
           <Navbar />
           <Login />
           </Route>
-        {user? (<Route  path="/dashboard" component={Dashboard} />) :
-        ( <Redirect to="/" />)
-           }  
+          <PrivateRoute>
+             <Route  path="/dashboard" component={Dashboard} />
+         </PrivateRoute>
+           
            {/* <PrivateRoute exact path="/dashboard" component={Dashboard} /> */}
     </Switch>
     </BrowserRouter>

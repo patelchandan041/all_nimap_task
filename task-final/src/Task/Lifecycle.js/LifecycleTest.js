@@ -8,6 +8,17 @@ class LifecycleTest extends Component {
             data: 0
         }
     };
+
+     componentDidMount(){
+         this.setState({data:6})
+     }
+
+     componentDidUpdate(){
+         if(this.state.data = 10){
+             this.setState({data:this.state.data+10})
+         }
+     }
+
     setNewNumber = () => {
         this.setState({ data: this.state.data + 1 })
     }
